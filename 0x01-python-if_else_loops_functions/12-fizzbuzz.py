@@ -18,5 +18,3 @@ def fizzbuzz():
             res = "Buzz"
 
         print("{}".format(res), end=" ")
-
-fizzbuzz()
