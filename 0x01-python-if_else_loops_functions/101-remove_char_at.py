@@ -6,6 +6,9 @@ def remove_char_at(str, n):
 
     if n < 0:
         return str
+    
+    if n > len(str) - 1:
+        return str
 
     res = ""
     for c in str:
