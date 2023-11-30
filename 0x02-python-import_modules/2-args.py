@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 import sys
 
+if __name__ != "__main__":
+    exit()
+
 count = len(sys.argv) - 1
 first_str = "{:d} "
 if count == 1:
