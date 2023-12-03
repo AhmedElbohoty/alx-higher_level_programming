@@ -9,9 +9,7 @@ def delete_at(my_list=[], idx=0):
     if idx >= len(my_list):
         return my_list
 
-    arr = []
-    for i, x in enumerate(my_list):
-        if i != idx:
-            arr.append(x)
+ 
+    my_list[idx:idx + 1] = []
 
-    return arr
+    return my_list
