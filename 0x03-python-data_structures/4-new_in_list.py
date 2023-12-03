@@ -14,6 +14,6 @@ def new_in_list(my_list, idx, element):
     if idx >= len(arr):
         return arr
 
-    my_list[idx] = element
+    arr[idx] = element
 
     return arr
