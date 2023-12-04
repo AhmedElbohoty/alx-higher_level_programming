@@ -11,21 +11,24 @@ int is_palindrome(listint_t **head)
 {
     int len = listint_len(*head);
 
-    return (is_palindrome_helper(*head, 0, len - 1));
+    return (is_palindrome_helper(*head, len - 1));
 }
 
-int is_palindrome_helper(listint_t *head, int start, int end)
+int is_palindrome_helper(listint_t *head, int end)
 {
-    int value_1 = get_nodeint_at_index(head, start)->n;
-    int value_2 = get_nodeint_at_index(head, end)->n;
+    int value_1, value_2;
 
+    if (end <= 0)
+        return (1);
+
+    value_1 = head->n;
+    value_2 = get_nodeint_at_index(head, end)->n;
     if (value_1 != value_2)
         return (0);
 
-    if (start >= end)
-        return (1);
+    head = (head)->next;
 
-    return (is_palindrome_helper(head, start + 1, end - 1));
+    return (is_palindrome_helper(head, end - 2));
 }
 
 /**
@@ -73,4 +76,28 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
         return (NULL);
 
     return (temp);
+}
+
+/**
+ * pop_listint - deletes the head node of a listint_t linked list.
+ * @head: pointer of pointer to singly linked list.
+ *
+ * Return: - If success, the head node’s data.
+ *         - Else, 0.
+ */
+int pop_listint(listint_t *head)
+{
+    int n;
+    listint_t *temp;
+
+    if (head == NULL)
+        return (0);
+
+    temp = head;
+    n = (head)->n;
+    head = (head)->next;
+
+    free(temp);
+
+    return (n);
 }
