@@ -14,6 +14,12 @@ int is_palindrome(listint_t **head)
     return (is_palindrome_helper(*head, len - 1));
 }
 
+/**
+ * is_palindrome_helper - recursive helper for is_palindrome
+ *
+ * Return: - 0 if it is not a palindrome.
+ *         - 1 if it is a palindrome.
+ */
 int is_palindrome_helper(listint_t *head, int end)
 {
     int value_1, value_2;
