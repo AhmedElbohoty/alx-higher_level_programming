@@ -9,8 +9,10 @@ def safe_print_list(my_list=[], x=0):
             end = "\n" if i == x - 1 else ""
             print("{}".format(my_list[i]), end=end)
             i += 1
-        except IndexError:
-            print("")
+        except Exception:
             break
+
+        finally:
+            print("")
 
     return i
