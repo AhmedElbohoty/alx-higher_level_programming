@@ -14,19 +14,33 @@ class Square:
         Attributes:
             size: size of one side of square
         """
-        self.__size = self.__is_size_valid(size)
+        self.__size = size
 
-    def __is_size_valid(self, size):
-        """Check if size is a valid square size
+    def area(self):
+        """Calculate the square area
+        """
+        return self.__size ** 2
+
+    @property
+    def size(self):
+        """Get the one side size of square
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, size):
+        """Size setter
+
+        Args:
+            size (int): size of one side.
+
+        Raises:
+            ValueError: size must be >= 0
+            TypeError: size must be an integer
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
         else:
-            return size
-
-    def area(self):
-        """Calculate the square area
-        """
-        return self.__size * self.__size
+            self.__size = size
