@@ -94,7 +94,7 @@ class Square:
         size = self.__size
         pos = self.__position
 
-        if size ==0:
+        if size == 0:
             return res
         for y in range(pos[1]):
             res += '\n'
