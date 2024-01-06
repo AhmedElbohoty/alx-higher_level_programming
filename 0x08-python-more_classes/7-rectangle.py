@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-'''Defines a rectangle
-'''
+'''Defines a rectangle'''
 
 
 class Rectangle:
     '''Defines a rectangle.
 
-    Class Attributes:
+    Attributes:
         number_of_instances: number of rectangles
+        print_symbol: symbol to represet rectangle
     '''
 
     number_of_instances = 0
@@ -19,11 +19,11 @@ class Rectangle:
             width (int, optional): width of rectangle.
             height (int, optional): height of rectangle.
         '''
-        Rectangle.validate_width(width)
-        Rectangle.validate_height(height)
+        type(self).validate_width(width)
+        type(self).validate_height(height)
         self.__width = width
         self.__height = height
-        Rectangle.number_of_instances += 1
+        type(self).number_of_instances += 1
 
     def __str__(self):
         '''Print the rectangle with the character #
@@ -37,7 +37,7 @@ class Rectangle:
         message = ''
         for i in range(self.__height):
             for _ in range(self.__width):
-                message += Rectangle.print_symbol
+                message += str(self.print_symbol)
             if i != self.height - 1:
                 message += '\n'
         return message
@@ -47,13 +47,13 @@ class Rectangle:
         return f'Rectangle({self.__width}, {self.__height})'
 
     def __del__(self):
-        Rectangle.number_of_instances -= 1
+        '''Execute after instance deletion'''
+        type(self).number_of_instances -= 1
         print('Bye rectangle...')
 
     @property
     def width(self):
-        '''int: return the width of rectangle.
-        '''
+        '''int: return the width of rectangle.'''
         return self.__width
 
     @width.setter
@@ -63,7 +63,7 @@ class Rectangle:
         Args:
            width (int, optional): width of rectangle.
         '''
-        Rectangle.validate_width(value)
+        type(self).validate_width(value)
         self.__width = value
 
     @property
@@ -79,7 +79,7 @@ class Rectangle:
         Args:
            height (int, optional): height of rectangle.
         '''
-        Rectangle.validate_height(value)
+        type(self).validate_height(value)
         self.__height = value
 
     def area(self):
