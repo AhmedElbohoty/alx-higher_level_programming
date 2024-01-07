@@ -26,21 +26,18 @@ def matrix_divided(matrix, div):
     Returns:
         returns matrix consists of results of division
     '''
+    type_err_msg = 'matrix must be a matrix (list of lists) of integers/floats'
     if not isinstance(matrix, list):
-        raise TypeError(
-            'matrix must be a matrix (list of lists) of integers/floats')
+        raise TypeError(type_err_msg)
     if matrix == []:
-        raise TypeError(
-            'matrix must be a matrix (list of lists) of integers/floats')
+        raise TypeError(type_err_msg)
 
     for row in matrix:
         if not isinstance(row, list):
-            raise TypeError(
-                'matrix must be a matrix (list of lists) of integers/floats')
+            raise TypeError(type_err_msg)
         for numb in row:
             if not isinstance(numb, (int, float)):
-                raise TypeError(
-                    'matrix must be a matrix (list of lists) of integers/floats')
+                raise TypeError(type_err_msg)
 
     for row in matrix:
         if len(row) != len(matrix[0]):
