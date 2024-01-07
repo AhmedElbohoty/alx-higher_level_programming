@@ -1,0 +1,76 @@
+2-matrix_divided.py
+======================
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+================
+Tests (No errors)
+================
+    >>> matrix = [
+    ...     [1, 2, 3.3],
+    ...     [0, -5, 6.6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33, 0.67, 1.1], [0.0, -1.67, 2.2]]
+    >>> print(matrix)
+    [[1, 2, 3.3], [0, -5, 6.6]]
+
+    >>> matrix = [[1]]
+    >>> print(matrix_divided(matrix, 3))
+    [[0.33]]
+
+    >>> matrix = [[]]
+    >>> print(matrix_divided(matrix, 3))
+    [[]]
+
+=============
+Tests (Errors)
+=============
+    >>> matrix = 1
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = []
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [1]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = None
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [[1, '2']]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [
+    ...     [1, 2, 3.3],
+    ...     [0, -5, 6.6, 5]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix = [[1, 2]]
+    >>> print(matrix_divided(matrix, '3'))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+
+    >>> print(matrix_divided(matrix, None))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+    
