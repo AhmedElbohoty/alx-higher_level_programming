@@ -27,4 +27,5 @@ The area method have to raise Exception:
 The integer_validator method takes 3 arguments self, name and value:
     >>> bg.integer_validator()
     Traceback (most recent call last):
+    ...
     TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
