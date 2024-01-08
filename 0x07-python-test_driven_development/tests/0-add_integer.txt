@@ -3,9 +3,9 @@
 
 >>> add_integer = __import__('0-add_integer').add_integer
 
-================
+=================
 Tests (No errors)
-================
+=================
     >>> add_integer(0, 0)
     0
 
@@ -30,9 +30,9 @@ Tests (No errors)
     >>> add_integer(7.4, 12)
     19
 
-=============
+==============
 Tests (Errors)
-=============
+==============
     >>> add_integer()
     Traceback (most recent call last):
     TypeError: add_integer() missing 1 required positional argument: 'a'
