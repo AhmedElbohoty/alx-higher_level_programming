@@ -25,7 +25,6 @@ The area method have to raise Exception:
     Exception: area() is not implemented
 
 The area method takes only sefl argument:
-    >>> bg = BaseGeometry()
     >>> bg.area(1)
     Traceback (most recent call last):
     TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
