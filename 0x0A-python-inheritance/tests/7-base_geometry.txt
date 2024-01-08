@@ -3,6 +3,10 @@
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+    >>> mod_doc = __import__("7-base_geometry").__doc__
+    >>> len(mod_doc) > 1
+    True
+
 =================
 Tests (No errors)
 =================
