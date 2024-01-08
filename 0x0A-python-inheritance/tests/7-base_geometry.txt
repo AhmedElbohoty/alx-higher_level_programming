@@ -24,4 +24,20 @@ The area method have to raise Exception:
     Traceback (most recent call last):
     Exception: area() is not implemented
 
+The integer_validator method: the value arg must be integer and greater than 0:
 
+    >>> bg.integer_validator('age', '1')
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+    >>> bg.integer_validator('age', 33.66)
+    Traceback (most recent call last):
+    TypeError: age must be an integer
+
+    >>> bg.integer_validator('age', 0)
+    Traceback (most recent call last):
+    ValueError: age must be greater than 0
+
+    >>> bg.integer_validator('age', -2)
+    Traceback (most recent call last):
+    ValueError: age must be greater than 0
