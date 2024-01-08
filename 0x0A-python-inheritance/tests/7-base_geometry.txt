@@ -51,7 +51,7 @@ The integer_validator method: the value arg must be integer and greater than 0:
     Traceback (most recent call last):
     TypeError: age must be an integer
 
-    >>> b.integer_validator("boolean", True)
+    >>> bg.integer_validator("boolean", True)
     Traceback (most recent call last):
     TypeError: boolean must be an integer
 
