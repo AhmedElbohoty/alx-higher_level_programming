@@ -8,9 +8,6 @@ Tests (No errors)
 =================
 
 BaseGeometry takes no arguments:
-    >>> bg = BaseGeometry(1)
-    Traceback (most recent call last):
-    TypeError: BaseGeometry() takes no arguments
 
     >>> bg = BaseGeometry()
     >>> bg.integer_validator('age', 5)
@@ -18,6 +15,10 @@ BaseGeometry takes no arguments:
 ==============
 Tests (Errors)
 ==============
+
+    >>> new_bg = BaseGeometry(1)
+    Traceback (most recent call last):
+    TypeError: BaseGeometry() takes no arguments
 
 The area method have to raise Exception:
     >>> bg.area()
