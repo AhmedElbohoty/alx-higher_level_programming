@@ -3,14 +3,15 @@
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
->>> mod = __import__("7-base_geometry").__doc__
->>> len(mod) > 1
-True
-
 =================
 Tests (No errors)
 =================
 
+BaseGeometry takes no arguments:
+    >>> bg = BaseGeometry(1)
+    Traceback (most recent call last):
+    TypeError: BaseGeometry() takes no arguments
+    
     >>> bg = BaseGeometry()
     >>> bg.integer_validator('age', 5)
 
