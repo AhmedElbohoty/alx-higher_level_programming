@@ -53,3 +53,7 @@ The integer_validator method: the value arg must be integer and greater than 0:
     >>> bg.integer_validator('age', -2)
     Traceback (most recent call last):
     ValueError: age must be greater than 0
+
+    >>> bg.integer_validator('age', 1, 3, 4)
+    Traceback (most recent call last):
+    TypeError: integer_validator() takes 3 positional arguments but 5 were given
