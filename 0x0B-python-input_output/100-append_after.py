@@ -14,7 +14,7 @@ def append_after(filename='', search_string='', new_string=''):
         new_string (str): The string to append.
     '''
     text = ''
-    with open(filename, 'r+', encoding='utf-8') as file_obj:
+    with open(filename, 'w+', encoding='utf-8') as file_obj:
         for line in file_obj:
             text += line
             if search_string in line:
