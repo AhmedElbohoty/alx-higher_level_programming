@@ -23,7 +23,7 @@ class TestBase(unittest.TestCase):
 
     def test_init_no_args(self):
         '''Create square without args'''
-        msg = "Square.__init__() missing 1 required positional argument:"
+        msg = "__init__() missing 1 required positional argument:"
         msg += " 'size'"
         with self.assertRaises(TypeError) as err:
             Square()

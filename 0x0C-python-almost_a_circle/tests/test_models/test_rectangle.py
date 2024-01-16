@@ -23,7 +23,7 @@ class TestBase(unittest.TestCase):
 
     def test_init_no_args(self):
         '''Create rectangle without args'''
-        msg = "Rectangle.__init__() missing 2 required positional arguments:"
+        msg = "__init__() missing 2 required positional arguments:"
         msg += " 'width' and 'height'"
         with self.assertRaises(TypeError) as err:
             Rectangle()
@@ -32,7 +32,7 @@ class TestBase(unittest.TestCase):
 
     def test_init_no_height_arg(self):
         '''Create rectangle without height arg'''
-        msg = 'Rectangle.__init__() missing 1 required positional argument:'
+        msg = '__init__() missing 1 required positional argument:'
         msg += " 'height'"
         with self.assertRaises(TypeError) as err:
             Rectangle(1)
