@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Base Class: 
+'''Base Class:
 
 The “base” class of all other classes in this project
 '''
