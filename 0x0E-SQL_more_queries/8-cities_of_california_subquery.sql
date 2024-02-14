@@ -2,6 +2,6 @@
 -- the database hbtn_0d_usa.
 
 SELECT c.id, c.name
-  FROM cities AS c INNER JOIN states AS s
-    ON s.id = c.state_id
+  FROM cities AS c, states AS s
+ WHERE s.name = 'California' AND c.state_id = s.id
  ORDER BY c.id;
