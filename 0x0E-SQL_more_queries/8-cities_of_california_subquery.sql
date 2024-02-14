@@ -3,5 +3,5 @@
 
 SELECT c.id, c.name
   FROM cities AS c, states AS s
-  WHERE s.name = 'California' AND c.state_id = s.id
-  ORDER BY c.id;
+ WHERE s.name = 'California' AND c.state_id = s.id
+ ORDER BY c.id;
