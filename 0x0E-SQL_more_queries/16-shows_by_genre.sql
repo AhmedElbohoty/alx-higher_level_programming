@@ -1,0 +1,1 @@
+-- Lists all shows, and all genres linked to that show.
