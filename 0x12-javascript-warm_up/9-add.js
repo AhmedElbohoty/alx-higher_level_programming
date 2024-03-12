@@ -5,7 +5,7 @@ function add (a, b) {
   return a + b;
 }
 
-const integer1 = parseInt(args[2], 10);
-const integer2 = parseInt(args[3], 10);
+const n1 = Number(args[2]);
+const n2 = Number(args[3]);
 
-console.log(add(integer1, integer2));
+console.log(add(n1, n2));
