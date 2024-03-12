@@ -10,5 +10,10 @@ function factorial (numb) {
 }
 
 const number = Number(args[2]);
-const fact = factorial(number);
-console.log(fact);
+
+if (number) {
+  const fact = factorial(number);
+  console.log(fact);
+} else {
+  console.log('1');
+}
