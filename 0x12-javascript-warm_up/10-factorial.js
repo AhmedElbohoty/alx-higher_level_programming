@@ -11,7 +11,7 @@ function factorial (numb) {
 
 const number = Number(args[2]);
 
-if (number) {
+if (!isNaN(number)) {
   const fact = factorial(number);
   console.log(fact);
 } else {
