@@ -2,16 +2,13 @@
 const args = process.argv;
 
 function factorial (numb) {
-  if (numb === 1) {
+  if (numb === 1 || numb === 0) {
     return (1);
   }
 
   return (numb * factorial(numb - 1));
 }
 
-if (!isNaN(args[2])) {
-  const num = factorial(parseInt(args[2], 10));
-  console.log(num);
-} else {
-  console.log('1');
-}
+const number = Number(args[2]);
+const fact = factorial(number);
+console.log(fact);
