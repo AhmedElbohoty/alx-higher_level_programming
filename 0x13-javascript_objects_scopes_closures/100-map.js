@@ -1,5 +1,9 @@
 #!/usr/bin/node
-const list = require('./100-data.js').list;
-const multList = list.map((e, ind) => e * ind);
+
+// script that imports an array and computes a new array.
+// A new list must be created with each value equal to the value of the initial
+// list, multipled by the index in the list.
+const list = require('./100-data').list;
 console.log(list);
-console.log(multList);
+const newList = list.map((num, index) => num * index);
+console.log(newList);
