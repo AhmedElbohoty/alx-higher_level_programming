@@ -7,7 +7,8 @@ import MySQLdb
 
 def filter_states(username, password, database_name):
     '''
-    List all states from the specified MySQL database hbtn_0e_0_usa.
+    List all states with a name starting with N
+    (upper N) from the database hbtn_0e_0_usa
 
     Args:
         username (str): The user name.
