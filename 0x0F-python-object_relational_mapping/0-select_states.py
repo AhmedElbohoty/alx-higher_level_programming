@@ -22,7 +22,7 @@ def list_states(username, password, database_name):
 
     cursor = connection.cursor()
 
-    cursor.execute('SELECT * FROM states')
+    cursor.execute('SELECT * FROM `states`')
 
     states = cursor.fetchall()
 
