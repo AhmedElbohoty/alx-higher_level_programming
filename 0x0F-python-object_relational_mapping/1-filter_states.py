@@ -23,12 +23,13 @@ def filter_states(username, password, database_name):
 
     cursor = connection.cursor()
 
-    cursor.execute("SELECT * FROM `states` WHERE name LIKE 'N%' ORDER BY `id`")
+    cursor.execute("SELECT * FROM `states` ORDER BY `id`")
 
     states = cursor.fetchall()
 
     for state in states:
-        print(state)
+        if state[1][0] == "N":
+            print(state)
 
     # Clear up the cursor and connection
     cursor.close()
