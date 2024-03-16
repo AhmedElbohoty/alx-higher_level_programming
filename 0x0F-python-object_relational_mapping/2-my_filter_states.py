@@ -24,8 +24,9 @@ def display_states_name(username, password, database_name, state_name):
 
     cursor = connection.cursor()
 
-    cursor.execute(
-        "SELECT * FROM `states` WHERE BINARY `name` = `{}`".format(state_name))
+    q = "SELECT * FROM `states` WHERE `name` = '{}' ORDER BY id".format(
+        state_name)
+    cursor.execute(q)
 
     states = cursor.fetchall()
 
