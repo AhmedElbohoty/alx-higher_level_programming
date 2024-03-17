@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 '''script that prints the first State object from database hbtn_0e_6_usa'''
 import sys
 from sqlalchemy import create_engine
