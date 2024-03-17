@@ -31,8 +31,7 @@ def display_states_name(username, password, database_name, state_name):
     states = cursor.fetchall()
 
     for state in states:
-        if state[1][0] == "N":
-            print(state)
+        print(state)
 
     # Clear up the cursor and connection
     cursor.close()
