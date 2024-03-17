@@ -22,5 +22,5 @@ def list_states(db):
 if __name__ == "__main__":
     args = sys.argv
     engine = create_engine(
-        'mysql://{}:{}@localhost:3306/{}'.format(args[1], args[2], args[3]))
+        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(args[1], args[2], args[3]))
     list_states(engine)
