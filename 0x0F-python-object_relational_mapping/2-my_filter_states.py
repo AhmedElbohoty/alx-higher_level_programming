@@ -24,7 +24,10 @@ def display_states_name(username, password, database_name, state_name):
 
     cursor = connection.cursor()
 
-    q = "SELECT * FROM `states` WHERE `name` = '{}' ORDER BY id".format(
+    q = "SELECT *\
+        FROM states\
+        WHERE name LIKE BINARY '{}'\
+        ORDER BY id ASC".format(
         state_name)
     cursor.execute(q)
 
