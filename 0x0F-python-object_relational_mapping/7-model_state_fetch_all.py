@@ -5,10 +5,10 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
 
-def list_states(engine):
+def list_states(db):
     '''script that lists all State objects from the database hbtn_0e_6_usa'''
 
-    Session = sessionmaker(bind=engine)
+    Session = sessionmaker(bind=db)
     session = Session()
 
     states = session.query(State).order_by(State.id).all()
