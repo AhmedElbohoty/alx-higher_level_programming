@@ -7,11 +7,15 @@ from sqlalchemy.orm import Session
 from model_state import Base, State
 
 
-def list_a(session):
+def state_filter_a(s):
     '''Script that lists all State objects that contain the letter
-    a from the database hbtn_0e_6_usa'''
+    a from the database hbtn_0e_6_usa
 
-    states = session.query(State).filter(
+    Args:
+        s (session)
+    '''
+
+    states = s.query(State).filter(
         State.name.contains('a')).order_by(State.id).all()
     if states is not None:
         for state in states:
@@ -28,6 +32,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     session = Session(engine)
 
-    list_a(session)
+    state_filter_a(session)
 
     session.close()
