@@ -13,8 +13,8 @@ def list_states(db):
 
     states = session.query(State).order_by(State.id).all()
 
-    for ind, state in enumerate(states):
-        print(f'{ind}: {state.name}')
+    for state in states:
+        print('{}: {}'.format(state.id, state.name))
 
     session.close()
 
@@ -22,5 +22,5 @@ def list_states(db):
 if __name__ == "__main__":
     args = sys.argv
     engine = create_engine(
-        f'mysql://{args[1]}:{args[2]}@localhost:3306/{args[3]}')
+        'mysql://{}:{}@localhost:3306/{}'.format(args[1], args[2], args[3]))
     list_states(engine)
