@@ -1,11 +1,9 @@
 #!/usr/bin/python3
 ''' City Model '''
-from model_state import Base, State
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine
-import sys
-from sqlalchemy import Integer, String, Column, ForeignKey
-from model_state import Base
+from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
 
 
 class City(Base):
