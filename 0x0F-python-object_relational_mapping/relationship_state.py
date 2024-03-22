@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-# Defines a State model.
-# Inherits from SQLAlchemy Base and links to the MySQL table states.
+''' State Model '''
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
-from relationship_city import Base
+from relationship_city import Base, City
 
 
 class State(Base):
