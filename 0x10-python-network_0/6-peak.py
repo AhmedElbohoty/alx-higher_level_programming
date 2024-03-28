@@ -8,26 +8,26 @@ def find_peak(list_of_integers):
     Args:
         list_of_integers (arr): list of unsorted integers
     '''
-    integers = list_of_integers
+    ints = list_of_integers
 
-    if not integers:
+    if not ints:
         return None
-    if len(integers) == 0:
+    if len(ints) == 0:
         return None
 
     left = 0
-    right = len(integers) - 1
+    right = len(ints) - 1
 
     while left < right:
         mid = left + (right - left) // 2
 
-        if integers[mid] > integers[mid - 1] and integers[mid] > integers[mid + 1]:
-            return integers[mid]
+        if ints[mid] > ints[mid - 1] and ints[mid] > ints[mid + 1]:
+            return ints[mid]
 
-        if integers[mid - 1] > integers[mid + 1]:
+        if ints[mid - 1] > ints[mid + 1]:
             right = mid
             continue
 
         left = mid + 1
 
-    return integers[left]
+    return ints[left]
