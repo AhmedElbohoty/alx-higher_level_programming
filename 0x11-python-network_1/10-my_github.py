@@ -5,10 +5,9 @@ import sys
 import requests
 
 
-url = "https://api.github.com/user"
-
-
 def my_github(username, password):
+    """ Get github user id """
+    url = "https://api.github.com/user"
     response = requests.get(url, auth=(username, password))
     if response.status_code == 200:
         data = response.json()
