@@ -12,20 +12,13 @@ import requests
 
 def get_commits(repo, owner):
     ''' Get repo commits '''
-    url = f'https://api.github.com/repos/{owner}/{repo}'
-
+    url = f'https://api.github.com/repos/{owner}/{repo}/commits'
     response = requests.get(url)
-    if response.status_code == 200:
-        data = response.json()
-        print(data)
-        print("Repository details:")
-        print("Name:", data['name'])
-        print("Owner:", data['owner']['login'])
-        print("Description:", data['description'])
-        print("URL:", data['html_url'])
-        print("Stars:", data['stargazers_count'])
-        print("Watchers:", data['subscribers_count'])
-        print("Forks:", data['forks_count'])
+
+    commits = response.json()[:10]
+    for commit in commits:
+        print(commit.get('sha'), end=': ')
+        print(commit.get('commit').get('author').get('name'))
 
 
 if __name__ == "__main__":
